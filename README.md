@@ -1,4 +1,9 @@
-# PostgreSQLの構築
+# DockerでのPostgreSQLの構築
+
+## 確認環境
+- WSL2(Ubuntu22.04.3 LTS)
+- Docker (25.0.3)
+- Docker Compose (v2.24.5)
 
 ## 設定ファイルの取得
 ```
