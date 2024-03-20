@@ -10,11 +10,17 @@
 # コンテナを仮構築（バージョンはenvと合わせる）
 docker run --name temp-postgres -e POSTGRES_PASSWORD=temp -d postgres:16.2
 
+# 設定ファイルのフォルダ作成
+mkdir config
+
 # 設定ファイルを取得
 docker cp temp-postgres:/var/lib/postgresql/data/postgresql.conf config/postgresql.conf 
 
 # パーミッション変更（一応、デフォルトに合わせる）
-sudo chmod 600 ./conf/postgresql.conf 
+sudo chmod 600 ./config/postgresql.conf
+
+# コンテナ削除
+docker rm -f temp-postgres
 ```
 
 ## 設定ファイル
